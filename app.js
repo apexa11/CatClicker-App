@@ -18,9 +18,9 @@ function bindButtonToCat(idNumber){
 function bindCounterToCat(idNumber){
     var cat = "#cat"+idNumber
     $(cat).click(function(){
-        var count = $(cat+".counter").text();
+        var count = $(cat+">.counter").text();
         count = parseInt(count) + 1;
-        $(cat+" .counter").text(count);
+        $(cat+" >.counter").text(count);
     })
 }
 
