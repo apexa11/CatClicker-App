@@ -1,4 +1,4 @@
-
+/*   Model  */
 var model ={
     currentCat : null;
     cat : [
@@ -36,3 +36,33 @@ var model ={
 
     ]
 };
+
+/* Octopus  */
+ var Octopus = {
+    init :function(){
+        model.currentCat = model.cat[0];
+        catView();
+
+    }
+    incrementCounter(){
+        model.currentCat.clickCount++;
+        catView.render();
+    }
+ }
+
+ var catView = {
+
+    init : function(){
+        this.catElem = document.getElementById('cat');
+        this.catName = document.getElementById('cat-name');
+        this.catImgeElem = document.getElementById('cat-img');
+        this.countElem = document.getElementById('cat-count');
+
+        this.catImgeElem.addeventlistner('click' , function(){
+            Octopus.incrementCounter();
+        })
+    }
+
+
+ }
+
