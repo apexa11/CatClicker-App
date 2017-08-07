@@ -44,7 +44,11 @@ var model ={
         catView();
 
     }
-    incrementCounter(){
+    getCurrentCat : function(){
+        model.currentCat;
+    },
+
+    incrementCounter:function(){
         model.currentCat.clickCount++;
         catView.render();
     }
@@ -54,13 +58,23 @@ var model ={
 
     init : function(){
         this.catElem = document.getElementById('cat');
-        this.catName = document.getElementById('cat-name');
-        this.catImgeElem = document.getElementById('cat-img');
+        this.catNameElem = document.getElementById('cat-name');
+        this.catImageElem = document.getElementById('cat-img');
         this.countElem = document.getElementById('cat-count');
 
-        this.catImgeElem.addeventlistner('click' , function(){
+        this.catImageElem.addEventListner('click' , function(){
             Octopus.incrementCounter();
-        })
+        });
+        this.render();
+    },
+
+    render : function(){
+        var currentCat = Octopus.getCurrentCat();
+        this.catNameElem.textContent = currentCat.name;
+        this.catImageElem.src = currentCat.imgSrc;
+        this.countElem.textContent = currentCat.clickCount;
+
+
     }
 
 
