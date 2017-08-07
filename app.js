@@ -72,7 +72,7 @@ var model ={
         this.catImageElem = document.getElementById('cat-img');
         this.countElem = document.getElementById('cat-count');
 
-        this.catImageElem.addEventListner('click' , function(){
+        this.catImageElem.addEventListener('click' , function(){
             Octopus.incrementCounter();
         });
         this.render();
