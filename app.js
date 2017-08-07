@@ -1,7 +1,7 @@
-/*   Model  */
+/******  Model  ******/
 var model ={
     currentCat : null;
-    cat : [
+    cats : [
         {
             clickCounter : 0;
             name : "pussy";
@@ -37,23 +37,32 @@ var model ={
     ]
 };
 
-/* Octopus  */
+/****** Octopus  ******/
  var Octopus = {
     init :function(){
         model.currentCat = model.cat[0];
         catView();
-
-    }
+    },
     getCurrentCat : function(){
         model.currentCat;
+    },
+
+    getCats : function(){
+        model.cats;
+    },
+
+    setCurrentCat : function(cat){
+        model.currentCat = cat;
     },
 
     incrementCounter:function(){
         model.currentCat.clickCount++;
         catView.render();
     }
- }
+ };
 
+
+/***** View *****/
  var catView = {
 
     init : function(){
@@ -76,7 +85,5 @@ var model ={
 
 
     }
-
-
- }
+};
 
