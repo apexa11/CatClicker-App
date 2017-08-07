@@ -1,7 +1,7 @@
 body{
 	background-color: #E2DBE2    ;
 	margin: 100px;
-
+	border: 1px solid white;
 }
 h1{
 	text-align: center;
@@ -23,4 +23,10 @@ li{
 	margin: 10px;
 	padding: 0 50px;
 
+}
+#cat{
+	text-align: center;
+}
+li:hover{
+	background-color: white;
 }
