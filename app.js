@@ -87,3 +87,44 @@ var model ={
     }
 };
 
+var catListView = {
+    init :function(){
+        this.catListElem = document.getElementById("cat-list");
+        this.render();
+    },
+
+    render :function(){
+        var cat , elem , i;
+        //get all the cats we' ll be rendering from octopus
+        var cats = Octopus.getCurrentCat();
+
+        //empty the cat list
+        his.catListElem.innerHTML = " ";
+
+        for (i=0 ; i < cats.length ; i++) {
+            cat = cats[i];
+
+            elem = document.createElement('li')
+            elem.textContent= cats.name;
+            elem.addEventListener('click', (function(catCopy) {
+                return function() {
+                    octopus.setCurrentCat(catCopy);
+                    catView.render();
+                };
+            })(cat));
+
+            // finally, add the element to the list
+            this.catListElem.appendChild(elem);
+        }
+    }
+};
+
+// make it go!
+octopus.init();
+
+        }
+
+
+    }
+}
+
